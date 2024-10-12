@@ -2,6 +2,7 @@ package com.example.services;
 
 import java.util.List;
 
+import com.example.model.UpdateEmployeeRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,4 +32,11 @@ public class EmployeeService {
 		return employeeRepository.saveEmployee(newEmployee);
 	}
 
+	public boolean deleteEmployee(String id){
+		return employeeRepository.deleteEmployee(id);
+	}
+
+	public Employee updateEmployee(String id, UpdateEmployeeRequest request) {
+		return employeeRepository.updateEmployee(id, request);
+	}
 }
